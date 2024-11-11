@@ -1,3 +1,19 @@
+/*
+  This software is based on code from Adafruit. The original code is licensed under the MIT License, 
+  and the copyright belongs to Adafruit Industries. This modified version includes substantial changes.
+
+  Original Copyright (c) 2020 Adafruit Industries
+  Additional modifications Copyright (c) 2024 George DiNicola
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy of this software and 
+  associated documentation files (the "Software"), to deal in the Software without restriction, including 
+  without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell 
+  copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the 
+  following conditions:
+
+  [Include the original license text here, or refer to it if included in another file]
+*/
+
 #include "Adafruit_seesaw.h"
 #include "RTClib.h"
 
