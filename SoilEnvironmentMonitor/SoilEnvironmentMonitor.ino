@@ -5,22 +5,24 @@ Adafruit_seesaw ss;
 RTC_DS1307 rtc;  // Declare rtc as an instance of RTC_DS1307
 
 const unsigned long BAUD_RATE = 115200;
-const unsigned long WAIT_TIME_MS = 60000;
+const unsigned long WAIT_TIME_MS = 60000;  // 1 minute
 
 void setup() {
   Serial.begin(BAUD_RATE);
 
   // Initialize Adafruit STEMMA Soil Sensor
   if (!ss.begin(0x36)) {
-    Serial.println("Error: Adafruit soil sensor not found");
-    while(1) delay(1);
+    Serial.println("Error: Adafruit soil sensor not found. Delaying program to avoid excessive CPU usage");
+    while (true) {
+      delay(WAIT_TIME_MS);
+    }
   }
 
   // Initialize RTC module
   if (!rtc.begin()) {
-    Serial.println("Error: RTC module not found. Stopping program");
+    Serial.println("Error: RTC module not found. Delaying program to avoid excessive CPU usage");
     while (true) {
-      delay(60000);  // Delay to avoid excessive CPU usage
+      delay(WAIT_TIME_MS);
     }
   }
 
